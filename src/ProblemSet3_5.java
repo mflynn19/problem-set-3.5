@@ -18,9 +18,8 @@ public class ProblemSet3_5 {
 	
 	public static void main(String[] args) {
 		ProblemSet3_5 ps = new ProblemSet3_5();
-		
+
 		// test your solutions here
-		
 		ps.primes(1, 1000);
 	}
 	
@@ -36,8 +35,32 @@ public class ProblemSet3_5 {
 	 */
 	
 	public void primes(int start, int end) {
-		
-	}
+		boolean isPrime = true;
+		int k;
+		int count = 0;
+		if (start == 1 || start == 0) {
+			isPrime = false;
+		}
+		for(int i = 2;i <= start /2; i++)
+		{
+	           k= start % i;
+	           if(k == 0) {
+	        	   isPrime = false;
+	        	   break;
+	           }
+	           else {
+	        	   count += 1;
+	           }
+		}
+		if((isPrime) && (count == 1)) {
+			System.out.println("There is 1 prime number.");
+		}
+		else if ((isPrime) && (count > 1)) {
+		   System.out.println("There are " + count + " prime numbers.");
+        	}
+        }
+
+	
 	
 	/**
 	 * What are the next @count leap years?
