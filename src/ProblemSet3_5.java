@@ -19,7 +19,6 @@ public class ProblemSet3_5 {
 	public static void main(String[] args) {
 		ProblemSet3_5 ps = new ProblemSet3_5();
 
-		// test your solutions here
 		ps.primes(1, 1000);
 	}
 	
