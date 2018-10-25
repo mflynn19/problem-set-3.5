@@ -21,6 +21,7 @@ public class ProblemSet3_5 {
 		ProblemSet3_5 ps = new ProblemSet3_5();
 
 		ps.primes(1, 1000);
+		ps.leapYears(3);
 	}
 	
 	/**
@@ -35,27 +36,31 @@ public class ProblemSet3_5 {
 	 */
 	
 	public void primes(int start, int end) {
-		boolean isPrime = true;
-		int k;
 		int count = 0;
-		if (start == 1 || start == 0) {
-			isPrime = false;
-		}
-		for(int i = 2;i <= start /2; i++)
+		for(int i = start;i <= end; i++)
 		{
-	           k= start % i;
-	           if(k == 0) {
-	        	   isPrime = false;
-	        	   break;
-	           }
-	           else {
-	        	   count += 1;
-	           }
+			boolean isPrime = true;
+			int k;
+			if (i==1 || i == 0) {
+				isPrime = false;
+			}
+			for(int j = 2;j <= i/2; j++)
+			{
+		           k= i % j;
+		           if(k == 0) {
+		        	   isPrime = false;
+		        	   break;
+		           }
+			}
+			if(isPrime) {
+				count++;
+			}
+
 		}
-		if((isPrime) && (count == 1)) {
+		if(count == 1) {
 			System.out.println("There is 1 prime number.");
 		}
-		else if ((isPrime) && (count > 1)) {
+		else if (count != 1) {
 		   System.out.println("There are " + count + " prime numbers.");
         	}
         }
@@ -73,7 +78,31 @@ public class ProblemSet3_5 {
 	 */
 	
 	public void leapYears(int count) {
-		
+		if (count <= 0) {
+			System.out.println("I don't know how to compute the next " + count + "leap years");
+		}
+		else if (count == 1) {
+			System.out.println("The next leap year is 2020.");
+		}
+		else if (count == 2) {
+			System.out.println("The next two leap years are 2020 and 2024.");
+		}
+		int year = 2016;
+		int nom = 0;
+		while(nom < count) {
+			year += 4;
+			if ((year % 100 == 0) && (year % 400 != 0)) {
+				year +=4;
+			nom++;
+		}
+		if (nom == count) {
+			System.out.print("and" + year + " .");
+		}
+		else {
+			System.out.print(year + ", ");
+		}
+		}
+		System.out.println("");
 	}
 	
 	/**
