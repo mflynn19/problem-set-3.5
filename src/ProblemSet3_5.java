@@ -1,12 +1,13 @@
 /**
  * INSTRUCTIONS.
- * 
+ *  
  * The following exercises are, perhaps, more mathematically inclined than previous
  * problem sets. While they might be challenging, they are certainly doable.
  * 
  * You can (and should!) solve each of them using only the operators, conditional control
  * structures, and iterative control structures we've covered. You are not permitted to use
  * recursive code in your solutions.
+ * 
  * 
  * Please be mindful of the expected outputs, as your code will be tested against that
  * directly. If you're unsure, please ask for clarification.
