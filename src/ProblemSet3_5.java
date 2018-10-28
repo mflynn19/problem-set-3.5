@@ -22,7 +22,8 @@ public class ProblemSet3_5 {
 
 		ps.primes(1, 1000);
 		ps.leapYears(3);
-		ps.palindromicNumbers(123321);
+		ps.palindromicNumbers(123456);
+		ps.fibonacci(21);
 	}
 	
 	/**
@@ -116,18 +117,19 @@ public class ProblemSet3_5 {
 	 */
 	
 	public void palindromicNumbers(int number) {
+		int nNum = number;
 		int revNum = 0;
-		for (;number != 0;) {
+		while (nNum != 0) {
 			revNum = revNum * 10;
-			revNum = revNum+ number%10;
-			number = number/10;
+			revNum = revNum + nNum % 10;
+			nNum = nNum/10;
 		}
 		System.out.print(revNum);
-		if (revNum == number) {
-			System.out.println(number + " is a palindromic number.");
+		if (revNum == nNum) {
+			System.out.println(nNum + " is a palindromic number.");
 		}
 		else {
-			System.out.println(number + " is not a palindromic number.");
+			System.out.println(nNum + " is not a palindromic number.");
 			} 
 	}
 	
@@ -143,7 +145,35 @@ public class ProblemSet3_5 {
 	 */
 	
 	public void fibonacci(int n) {
+		long before = 1;
+		long curVal = 1;
+		long next;
+		int count = n-2;
 		
+		while (count > 0) {
+			next = before + curVal;
+			before = curVal;
+			curVal = next;
+			count--;
+		}
+		String ending;
+		switch ((n / 10 ==1) ? n : n % 10) {
+		case 1:
+			ending = "st";
+			break;
+		
+		case 2:
+			ending = "nd";
+			break;
+		
+		case 3:
+			ending = "rd";
+			break;
+			
+		default:
+			ending = "th";
+		}
+		System.out.println("The " + n + ending + " Fibonacci number is " + curVal + ".");
 	}
 	
 	/**
@@ -156,6 +186,10 @@ public class ProblemSet3_5 {
 	 */
 	
 	public void multiples(int x, int y, int limit) {
-		
+		int sum = 0;
+		for (int i = 0;i < limit; i++) {
+			sum += (i % x == 0 || i % y == 0) ? i : 0;
+		}
+		System.out.println("The sum of all multiples of " + x + "and" + y + " is less than "+ limit + "is " + sum + ".");
 	}
 }
