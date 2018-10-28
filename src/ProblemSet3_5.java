@@ -22,6 +22,7 @@ public class ProblemSet3_5 {
 
 		ps.primes(1, 1000);
 		ps.leapYears(3);
+		ps.palindromicNumbers(123321);
 	}
 	
 	/**
@@ -115,7 +116,19 @@ public class ProblemSet3_5 {
 	 */
 	
 	public void palindromicNumbers(int number) {
-		
+		int revNum = 0;
+		for (;number != 0;) {
+			revNum = revNum * 10;
+			revNum = revNum+ number%10;
+			number = number/10;
+		}
+		System.out.print(revNum);
+		/*if (revNum == number) {
+			System.out.println(number + " is a palindromic number.");
+		}
+		else {
+			System.out.println(number + " is not a palindromic number.");
+			} */
 	}
 	
 	/**
