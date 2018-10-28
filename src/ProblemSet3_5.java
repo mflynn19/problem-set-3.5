@@ -123,12 +123,12 @@ public class ProblemSet3_5 {
 			number = number/10;
 		}
 		System.out.print(revNum);
-		/*if (revNum == number) {
+		if (revNum == number) {
 			System.out.println(number + " is a palindromic number.");
 		}
 		else {
 			System.out.println(number + " is not a palindromic number.");
-			} */
+			} 
 	}
 	
 	/**
